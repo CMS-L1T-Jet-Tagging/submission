@@ -24,7 +24,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(100),
+    input = cms.untracked.int32(10),
     output = cms.optional.untracked.allowed(cms.int32,cms.PSet)
 )
 
@@ -117,8 +117,8 @@ process.L1TrackTrigger.remove(process.TTTrackAssociatorFromPixelDigisExtended)
 
 # load ntuplizer
 process.load('L1Trigger.L1CaloTrigger.L1TCaloTriggerNtuples_cff')
-# process.ntuple_step = cms.Path(process.l1CaloTriggerNtuples)
-process.ntuple_step = cms.Path(process.l1CaloTriggerNtuplizer_egOnly)
+process.ntuple_step = cms.Path(process.l1CaloTriggerNtuples)
+# process.ntuple_step = cms.Path(process.l1CaloTriggerNtuplizer_egOnly)
 
 process.TFileService = cms.Service(
     "TFileService",
@@ -283,7 +283,8 @@ from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEar
 process = customiseEarlyDelete(process)
 # End adding early deletion
 
-
+from L1Trigger.L1THGCal.customHistoSeeding import custom_3dclustering_seedNoArea
+process = custom_3dclustering_seedNoArea(process)
 
 # define regions
 def goRegional(postfix="", relativeCoordinates=False):
