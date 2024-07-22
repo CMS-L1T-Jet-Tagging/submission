@@ -14,7 +14,8 @@ config.General.transferLogs = False
 
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = 'TEMPL_TASKCONFDIR/input_cfg.py'
-config.JobType.maxMemoryMB = 3000
+# config.JobType.maxMemoryMB = 3000
+config.JobType.maxMemoryMB = 2500
 # config.JobType.numCores = 4
 # config.JobType.maxMemoryMB = 7000
 
@@ -25,6 +26,7 @@ config.Data.totalUnits = TEMPL_NEVENTS
 config.Data.outLFNDirBase = 'TEMPL_CRABOUTDIR'
 config.Data.publication = False
 config.Data.ignoreLocality = False
+config.Data.partialDataset = True
 config.Data.outputDatasetTag = 'TEMPL_DATASETTAG'
 
 config.Site.storageSite = 'T2_CH_CERN'
