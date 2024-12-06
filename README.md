@@ -48,3 +48,16 @@ The templated files are of 4 kinds:
 4. `crab_MODE.py` is the templated crab configuration file.  (This is only used when submitting via Crab3).
 
 Note that if the yaml configuration defines a mode that is not implemented for a certain file the script will fall back to the corresponding file in `DEFAULT` mode.
+
+
+
+
+## Jet tagging additions
+For monitoring of the jobs we use the `mrCrabs` repository (another submodule) as e.g.
+```bash
+python3 ../mrCrabs/mrCrabs.py fpinputs/142Xv0/*/crab_*/
+```
+and for resubmission and additional options do for example
+```bash
+python3 ../mrCrabs/mrCrabs.py fpinputs/142Xv0/*/crab_*/ --resubmit -a --maxjobruntime=2750
+```
