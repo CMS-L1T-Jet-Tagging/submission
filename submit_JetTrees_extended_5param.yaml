@@ -1,0 +1,510 @@
+# espresso     = 20 minutes
+# microcentury = 1 hour
+# longlunch    = 2 hours
+# workday      = 8 hours
+# tomorrow     = 1 day
+# testmatch    = 3 days
+# nextweek     = 1 week
+
+
+Common:
+  mode: FP
+  name: fp_extendedTRK_5param
+  # name: fp_baseline
+  # name: fp_extended_gentau
+  # name: fp_baseline_gentau
+  # name: fp_extended_recotau
+  # name: fp_baseline_recotau
+  
+  tasks:
+    - DYToLL_M10To50_PU200
+    - DYToLL_M50_PTLL200To400_PU200
+    - DYToLL_M50_PTLL400To600_PU200
+    - DYToLL_M50_PTLL600ToInf_PU200
+    - DYToLL_M50_PU200
+    - GluGluHHTo2B2Tau_PU200
+    - GluGluHHTo4B_PU200
+    - GluGluHToGG_PU200
+    - GluGluHToTauTau_PU200
+    - MinBias_PU200
+    - QCD_Pt120To170_PU200
+    - QCD_Pt15To3000_PU200
+    - QCD_Pt170To300_PU200
+    - QCD_Pt20To30_PU200
+    - QCD_Pt300To470_PU200
+    - QCD_Pt30To50_PU200
+    - QCD_Pt470To600_PU200
+    - QCD_Pt50To80_PU200
+    - QCD_Pt600ToInf_PU200
+    - QCD_Pt80To120_PU200
+    - TTTo2L2Nu_PU200
+    - TTToSemileptonic_PU200
+    - TT_PU200
+    - VBFHToBB_PU200
+    - VBFHToCC_PU200
+    - VBFHToTauTau_PU200
+    - VBFHToTauTau_ext_PU200
+    - WJetsToLNu_PU200
+    - XtoHH_MX_1000To4000_PU200
+    - XtoHH_MX_500To1000_PU200
+    - ZprimeToTauTau_M1500_PU200
+    - ZprimeToTauTau_M500_PU200
+
+  version: fp_jettuples_v142Xv0
+  output_dir_base: /eos/cms/store/cmst3/group/l1tr/sewuchte/l1teg/fp_jettuples
+  ncpu: 1
+  output_file_name: jetTuple_extended_5.root
+  # output_file_name: tauTuple.root
+  # output_file_name: genTauTuple.root
+
+Configuration:
+  - mode: FP
+    cmssw_config: ../NtupleProducer/python/runJetNTuple.py
+
+DYToLL_M10To50_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/DYToLL_M10To50_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+DYToLL_M50_PTLL200To400_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/DYToLL_M50_PTLL200To400_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+DYToLL_M50_PTLL400To600_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/DYToLL_M50_PTLL400To600_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+DYToLL_M50_PTLL600ToInf_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/DYToLL_M50_PTLL600ToInf_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+DYToLL_M50_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/DYToLL_M50_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+GluGluHHTo2B2Tau_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/GluGluHHTo2B2Tau_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+GluGluHHTo4B_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/GluGluHHTo4B_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+GluGluHToGG_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/GluGluHToGG_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+GluGluHToTauTau_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/GluGluHToTauTau_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+MinBias_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/MinBias_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+QCD_Pt120To170_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/QCD_Pt120To170_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+QCD_Pt15To3000_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/QCD_Pt15To3000_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+QCD_Pt170To300_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/QCD_Pt170To300_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+QCD_Pt20To30_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/QCD_Pt20To30_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+QCD_Pt300To470_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/QCD_Pt300To470_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+QCD_Pt30To50_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/QCD_Pt30To50_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+QCD_Pt470To600_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/QCD_Pt470To600_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+QCD_Pt50To80_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/QCD_Pt50To80_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+QCD_Pt600ToInf_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/QCD_Pt600ToInf_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+QCD_Pt80To120_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/QCD_Pt80To120_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+TTTo2L2Nu_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/TTTo2L2Nu_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+TTToSemileptonic_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/TTToSemileptonic_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+TT_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/TT_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+VBFHToBB_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/VBFHToBB_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+VBFHToCC_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/VBFHToCC_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+VBFHToTauTau_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/VBFHToTauTau_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+VBFHToTauTau_ext_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/VBFHToTauTau_ext_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+WJetsToLNu_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/WJetsToLNu_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+XtoHH_MX_1000To4000_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/XtoHH_MX_1000To4000_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+XtoHH_MX_500To1000_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/XtoHH_MX_500To1000_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+ZprimeToTauTau_M1500_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/ZprimeToTauTau_M1500_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
+
+ZprimeToTauTau_M500_PU200:
+  input_directory: /eos/cms/store/cmst3/group/l1tr/FastPUPPI/14_2_X/fpinputs_140X/v0/ZprimeToTauTau_M500_PU200/
+  crab: False
+  splitting_mode: file_based
+  splitting_granularity: 1
+  inline_customize:
+    - addSeededConeJets()
+    - addNNPuppiTaus()
+    - addGenJetFlavourTable()
+    - addMultitagging(trktype = "extended")
+    - addJetNTuple(trktype = "extended", nparam = 5)
+  job_flavor: workday
+  max_events: -1
